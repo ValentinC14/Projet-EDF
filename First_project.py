@@ -20,7 +20,7 @@ This app retrieves the list of the **S&P 500** (from Wikipedia) and its correspo
 
 st.sidebar.header('User Input Features')
 
-# Web scraping of S&P 500 data
+# Web scraping of S&rvrvrvrvrevfdvdfsP 500 data
 #
 @st.cache
 def load_data():
