@@ -112,4 +112,5 @@ def plot_gauss():
     plt.scatter(X,Y)
     return st.pyplot()
 
+
 plot_gauss()
