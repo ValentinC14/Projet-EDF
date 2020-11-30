@@ -47,3 +47,46 @@ if selector == 'KDE SEULEMENT':
     plot_hist(num_bins, nrows, hist =False, kde = True)
 if selector == 'HISTORIGRAMME ET KDE':
     plot_hist(num_bins, nrows, hist =True, kde = True)
+
+def create_range_dist():
+    df_un_point_par_station = df.groupby(by = 'numero_station').mean()
+
+    bins = [0, 5, 10, 20, 30, 40, 50]
+    names = ['<5km', '5-10', '10-20', '20-30', '30-40', '40-50', '+50']
+
+    d = dict(enumerate(names, 1))
+
+    df_un_point_par_station['range_dist'] = np.vectorize(d.get)(np.digitize(df_un_point_par_station['distance_station'], bins))
+    return df_un_point_par_station
+
+df_un_point_par_station = create_range_dist()
+
+def plot_alt_vs_biais():
+    fig, ax = plt.subplots()
+    ax = sns.scatterplot(x = 'altitude', y = 'biais', hue = 'range_dist', size='range_dist', sizes = (20,200), legend = 'full',alpha = 0.75, data = df_un_point_par_station)
+    return st.pyplot(fig)
+
+
+st.header('''**Affichage de l'altitude selon le biais**''')
+st.write('La corrélation est de %.3f' %(df_un_point_par_station['altitude'].corr(df_un_point_par_station['biais'])))
+
+plot_alt_vs_biais()
+
+
+# AFFICHAGE 3D Altitude/Distance/Biais
+def plot_3D_alt_dist_biais():
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    x = df_un_point_par_station['biais'].to_list()
+    y = df_un_point_par_station['distance_station'].to_list()
+    z = df_un_point_par_station['altitude'].to_list()
+    ax.scatter(x,y,z)
+    ax.set_xlabel("Biais")
+    ax.set_ylabel("Distance avec la station synop")
+    ax.set_zlabel("Différence d'altitude")
+    return st.pyplot(fig)
+
+st.header('''**Affichage 3D - biais VS distance VS altitude **''')
+
+st.write(df_un_point_par_station['altitude'].corr(df_un_point_par_station['biais']))
+plot_3D_alt_dist_biais()
