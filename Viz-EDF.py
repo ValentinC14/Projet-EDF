@@ -14,7 +14,6 @@ from matplotlib.colors import ListedColormap
 import re
 import plotly.express as px
 
-streamlit cheet sheat
 ## CODE
 
 st.title('Visualisation des données météociel en lien avec le projet EDF')
@@ -160,4 +159,23 @@ def multi_plot_kde_dist(var):
 selector = st.selectbox('Select', ['range_dist','range_alt'])
 multi_plot_kde_dist(selector)
 
-##
+## PLOT CORRELATION POUR DIFFERENTS RAYONS
+
+# st.header('''* Correlation des températures pour differents rayons*)''')
+#
+# df1 = pd.read_excel('/Users/valentincatherine/Desktop/Projet-EDF/temp_dist_part1.xlsx')
+# df2 = pd.read_excel('/Users/valentincatherine/Desktop/Projet-EDF/temp_dist_part2.xlsx')
+# df_tot = pd.concat([df1,df2])
+# st.write('Format du dataframe')
+# st.dataframe(df_tot.sample(10))
+# dist = st.slider('Distance', min_value = 1, max_value = 200)
+#
+# def show_corr(dist):
+#     fig, ax = plt.subplots()
+#     df_under_dist = df_tot[df_tot['dist_km'] <= dist]
+#     rho = df_under_dist['temperature_synop'].corr(df_under_dist['temperature_meteociel'])
+#     return st.write('La correlation est de {}'.format(rho))
+#     #ax = sns.scatterplot(x = 'temperature_synop', y = 'temperature_meteociel', data = df_under_dist)
+#     #return st.pyplot(fig)
+#
+# show_corr(dist)
