@@ -1,6 +1,6 @@
 '''
 Ce programme permet de créer un dataframe avec les colonnes suivantes :
-temperature du synop, temperature de la meteociel, leur différence de température
+temperature du synop, temperature de la meteociel, leur RMSE
 et enfin, le plus important, la distance les séparant en km
 
 Pour ceci, on part de deux base de données déjà existantes :
@@ -44,8 +44,9 @@ liste_df = []
 for index, url in enumerate(URL_ALL):
     df = pd.read_csv(url, sep=';', )
     id = liste_id[index]
-    df['id'] = int(id)
-    df = df.drop(['Unnamed: 0','ind'], axis = 1).dropna()
+    if id != 'Store':
+        df['id'] = int(id)
+    df = df.drop(['Unnamed: 0'], axis = 1).dropna()
     liste_df.append(df)
 
 df_tot = pd.concat([df for df in liste_df])
@@ -55,8 +56,11 @@ df_meteo_synop = pd.read_excel('/Users/valentincatherine/Desktop/Projet-EDF/Stat
 columns_to_keep = ['temperature_synop', 'temperature_meteociel','difference_temperature','dist_km']
 
 df_merge = pd.merge(df_tot, df_meteo_synop, how = 'left', on='id')[columns_to_keep]
+
+df_merge['RMSE'] = np.sqrt((df_merge['temperature_synop'] - df_merge['temperature_meteociel'])**2)
+
 df_merge_part1 = df_merge.loc[:1000000,:]
 df_merge_part2 = df_merge.loc[1000000:,:]
 
-df_merge_part1.to_excel(PATH + '/temp_dist_part1.xlsx')
-df_merge_part2.to_excel(PATH + '/temp_dist_part2.xlsx')
+df_merge_part1.to_excel(PATH + '/temp_dist_rmse_part1.xlsx')
+df_merge_part2.to_excel(PATH + '/temp_dist_rmse_part2.xlsx')
