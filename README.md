@@ -20,7 +20,9 @@ Once the data had been extracted, the idea was to carry out graphic displays and
 
 In the midst of all this collected data, we have stations that transmit highly reliable data and serve as a benchmark. These are data from 279 "synop" stations distributed homogeneously over all French territories.
 
-Thus, each extracted meteorological station was associated with the closest reference synop station. We used 4 statistical indicators to judge the similarity or difference between a station and its reference (= its synop). The criteria were: bias, standard deviation, MAE and MAPE.
+Thus, each extracted meteorological station was associated with the closest reference synop station. We used 4 statistical indicators to judge the similarity or difference between a station and its reference (= its synop). The criteria were: bias, standard deviation, MAE and MAPE. 
+
+Finally, we used a supervised learning algorithm (KMeans) to create selection criteria on the indicators. Indeed, a compromise had to be found between the number of stations and its quality. 
 
 
 
