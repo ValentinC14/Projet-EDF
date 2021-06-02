@@ -64,6 +64,8 @@ Finally, after some reflexions and analysis,results on criteria are summarized i
 </p>
 
 
+Thus, a station is considered reliable if it is located less than 70km from its reference station (its synop) and at an altitude difference of less than 400m.
+
 <a name="s4"></a>
 ## Step 4 : Machine Learning
 
