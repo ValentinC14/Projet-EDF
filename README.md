@@ -18,7 +18,9 @@ Since the project was largely exploratory by the client, a first step was to gat
 
 Here you can see an excel extract of our research : 
 
-(mettre photo excel)
+<p align="center">
+  <img width="800" height="300" src="https://github.com/valentincthrn/projet-edf/blob/main/images/excel_recherche.png">
+</p>
 
 <a name="s2"></a>
 ## Step 2 : Analysis sheets
@@ -27,11 +29,24 @@ Once the data had been extracted, the idea was to carry out graphic displays and
 
 In the midst of all this collected data, we have stations that transmit highly reliable data and serve as a benchmark. These are data from 63 stations called "synop" and they are distributed homogeneously over all French territories.
 
+<img align="right" width="300" height="300" src="https://github.com/valentincthrn/projet-edf/blob/main/images/map-station.png">
+
+<br>
+<br>
+<br>
+<br>
 Thus, each extracted meteorological station was associated with the closest reference synop station. We used 4 statistical indicators to judge the similarity or difference between a station and its reference (= its synop). The criteria were: bias, standard deviation, MAE and MAPE. On the right, the red dots are the weather stations to which we must know their reliability. In blue, these are the reference stations, or also called "synop". 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 One problem encountered during this step is the length of time it takes to complete a sheet. Indeed, all the graphs returned by the python code had to be copied and pasted on a word document. Furthermore, the execution time of the code was long and more than 15 graphics were present. So, I decided to automate the process by creating directly a local folder with all the pre-filled images and texts for each station. 
 
-Here is one of our 650 Analysis Sheet provided to EDF : [EDF Sheet Fontannes]  (SHEET)
+Here is one of our 650 Analysis Sheet provided to EDF : [EDF Sheet Fontannes](https://github.com/valentincthrn/projet-edf/blob/main/images/exemple-fiche-analyse.pdf)
 
 <a name="s3"></a>
 ## Step 3 : Conclusion on criteria
