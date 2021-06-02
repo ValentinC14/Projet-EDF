@@ -31,15 +31,16 @@ Thus, each extracted meteorological station was associated with the closest refe
 
 One problem encountered during this step is the length of time it takes to complete a sheet. Indeed, all the graphs returned by the python code had to be copied and pasted on a word document. Furthermore, the execution time of the code was long and more than 15 graphics were present. So, I decided to automate the process by creating directly a local folder with all the pre-filled images and texts for each station. 
 
+Here is one of our 650 Analysis Sheet provided to EDF : [EDF Sheet Fontannes]  (SHEET)
+
 <a name="s3"></a>
 ## Step 3 : Conclusion on criteria
 
-We must not forget that the goal was to provide quality criteria to EDF. The characteristics of each meteoscience station relative to its reference station are the following (averaged at different time steps): MAE, RMSE, MAPE, altitude, distance. 
-After extracting and specifying all these indicators, the goal was to choose the most qualitative stations. 
+We must not forget that the goal was to provide quality criteria to EDF. The characteristics of each meteociel station relative to its reference station are the following (averaged at different time steps): MAE, RMSE, MAPE, altitude, distance. After extracting and specifying all these indicators, the goal was to choose the most qualitative stations. 
 
-To do this, we performed an unsupervised learning algorithm (KMeans).We plotted in a 3D plane different indicators between them and then identified the indicators most likely to play on the quality. 
+To do this, we performed an unsupervised learning algorithm (KMeans).We plotted in a 3D plane different indicators between them and then identified the indicators most likely to play on the quality. Here is an example of a 3D plot where each color correspond to a group. (EXEMPLE PLOT 3D)
 
-The results are summarized in the following table: (table du google slide)
+Finally, after some reflexions and analysis,results on criteria are summarized in the following table: (table du google slide)
 
 <a name="s4"></a>
 ## Step 4 : Machine Learning
