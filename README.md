@@ -9,7 +9,7 @@ This project is part of the Centralien educational curriculum. It lasts 18 month
 - [step 3 : conclusion on the data selection criteria](#s3)
 - [step 4 : development of an AI algorithm to predict the load factor of French wind farms](#s4)
 
-/!\ I will only provide the Python codes for the last step of Machine Learning. Indeed, the preceding codes were carried out in group and can be confidential for our customer. 
+/!\ I will only provide the Python codes for the last step (Machine Learning). Indeed, the preceding codes were carried out in group and can be confidential for our customer. 
 
 <a name="s1"></a>
 ## Step 1 : Search for reliable meteorological websites
