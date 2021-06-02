@@ -1,8 +1,6 @@
 # Projet-EDF
 
-Inline-style: 
-![alt text](https://github.com/valentincthrn/projet-edf/images/logo_edf.png "Logo Title Text 1")
-
+<img align="right" width="400" height="150" src="https://github.com/valentincthrn/projet-edf/blob/main/images/logo_edf.png">
 
 This project is part of the Centralien educational curriculum. It lasts 18 months and is carried out in a team of 12 people in collaboration with EDF. Here, I will detail the technical aspect undertaken by the team and myself. This project is part of the Centralien educational curriculum. It lasts 18 months and is carried out in a team of 12 people in collaboration with EDF. Here, I will detail the technical aspect undertaken by the team and myself. Chronologically, the work was divided as follows: 
 - step 1 : search for reliable meteorological websites
