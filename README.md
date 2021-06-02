@@ -33,7 +33,36 @@ To do this, we performed an unsupervised learning algorithm (KMeans).We plotted 
 
 The results are summarized in the following table: (table du google slide)
 
+## Step 3 : Machine Learning
 
+This last step was optional but it was the most interesting point for me. In the last 2 months, we formed a team of 3 people to deal with the Machine Learning part. I mainly led and carried out this part. 
+
+After a lot of discussions with the client, the goal was to predict the load factors of the wind turbines between the time t + 1h and t + 4h from the historical wind data before time t. The load factor is defined as the number of hours of wind power per hour. 
+
+
+The load factor is defined as the ratio between the output of the wind turbines and their installed power. Thus a load factor of 0% corresponds to a wind farm at standstill (no production). A factor of 100% means that the production is at its maximum. 
+
+In contrast to the method used by EDF, and due to the limited resources I have, I have adopted an end-to-end approach as illustrated below. 
+
+(put method)
+
+The data from the Extraction division are several Excels. Each excel corresponds to ONLY one weather station. Within these excels, the indexes are the time step (here hourly step) and the columns are our features (date, meteoscel temperature, synop temperature, meteoscel wind, synop wind). So, the first step is to concatenate all the excels together in a dataframe. 
+
+(put code)
+
+Then a pivot is applied to index each time step and the columns correspond to the data of each station. 
+
+(put code)
+
+However, during the concatenation, missing values appeared because of the join on all the existing time steps. After analysis, I first deleted all stations with more than 6% missing values. For the other stations, I applied an experimental class from Scikit-learn called "Iterative Imputer" which replaced the missing values very well. 
+
+(put missing values code)
+
+The data is now ready and now it is time to implement AI algorithms. The first step which I think is essential is to start simple via linear regression. More generally, I used a class called "LazyPredict" which allows to make predictions with all models compatible with our data types. 
+
+(put Lazy Predict code)
+
+The results show a better efficiency of the regularised linear regression models (ElasticNet, Lasso). 
 
 
 
