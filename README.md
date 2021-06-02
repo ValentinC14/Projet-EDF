@@ -23,7 +23,7 @@ Here you can see an excel extract of our research :
 
 Once the data had been extracted, the idea was to carry out graphic displays and statistical analyzes on each of the connected objects collected. Next, the deliverable was to provide EDF with selection criteria on the quality of the data. But how can we qualify the quality of the latter?
 
-In the midst of all this collected data, we have stations that transmit highly reliable data and serve as a benchmark. These are data from 279 stations called "synop" and they are distributed homogeneously over all French territories.
+In the midst of all this collected data, we have stations that transmit highly reliable data and serve as a benchmark. These are data from 63 stations called "synop" and they are distributed homogeneously over all French territories.
 
 Thus, each extracted meteorological station was associated with the closest reference synop station. We used 4 statistical indicators to judge the similarity or difference between a station and its reference (= its synop). The criteria were: bias, standard deviation, MAE and MAPE. On the right, the red dots are the weather stations to which we must know their reliability. In blue, these are the reference stations, or also called "synop". 
 
