@@ -64,6 +64,23 @@ The data is now ready and now it is time to implement AI algorithms. The first s
 
 The results show a better efficiency of the regularised linear regression models (ElasticNet, Lasso). 
 
+Then, with GridSearchCV, I found the optimal hyperparameter of ElasticNet: the l1_ratio equal to 0.1. 
+
+(gridsearch code)
+
+Then the results of the model on the test data are the following: 
+
+(put picture)
+
+On average, our model predicts a -1.3% difference in load factor. Our client was satisfied with the result. 
+
+Then, out of curiosity, I developed a simple neural network structured in a relatively simple way. 
+
+(code NN)
+
+I obtained less satisfactory results with an average bias of -3.31% on the test data. 
+
+
 
 
 
