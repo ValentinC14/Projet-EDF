@@ -53,9 +53,16 @@ Here is one of our 650 Analysis Sheet provided to EDF : [EDF Sheet Fontannes](ht
 
 We must not forget that the goal was to provide quality criteria to EDF. The characteristics of each meteociel station relative to its reference station are the following (averaged at different time steps): MAE, RMSE, MAPE, altitude, distance. After extracting and specifying all these indicators, the goal was to choose the most qualitative stations. 
 
+<img align="right" width="300" height="300" src="https://github.com/valentincthrn/projet-edf/blob/main/images/exemple_plot_3D.png">
+
 To do this, we performed an unsupervised learning algorithm (KMeans).We plotted in a 3D plane different indicators between them and then identified the indicators most likely to play on the quality. Here is an example of a 3D plot where each color correspond to a group. (EXEMPLE PLOT 3D)
 
-Finally, after some reflexions and analysis,results on criteria are summarized in the following table: (table du google slide)
+Finally, after some reflexions and analysis,results on criteria are summarized in the following table : 
+
+<p align="center">
+  <img width="225" height="125" src="https://github.com/valentincthrn/projet-edf/blob/main/images/tableau_resultat_critere.png">
+</p>
+
 
 <a name="s4"></a>
 ## Step 4 : Machine Learning
