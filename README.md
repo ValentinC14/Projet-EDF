@@ -27,7 +27,7 @@ Here you can see an excel extract of our research :
 
 Once the data had been extracted, the idea was to carry out graphic displays and statistical analyzes on each of the connected objects collected. Next, the deliverable was to provide EDF with selection criteria on the quality of the data. But how can we qualify the quality of the latter?
 
-Amid all this collected data, we have stations that transmit highly reliable data and serve as a benchmark. These are data from 63 stations ([available here in this CSV])(https://github.com/valentincthrn/projet-edf/blob/main/postesSynop.csv) called "synop" and they are distributed homogeneously over all French territories.
+Amid all this collected data, we have stations that transmit highly reliable data and serve as a benchmark. These are data from 63 stations ([available here in this CSV](https://github.com/valentincthrn/projet-edf/blob/main/postesSynop.csv)) called "synop" and they are distributed homogeneously over all French territories.
 
 <img align="right" width="300" height="300" src="https://github.com/valentincthrn/projet-edf/blob/main/images/map-station.png">
 
