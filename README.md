@@ -12,9 +12,9 @@ This project is part of the Centralien educational curriculum. It lasts 18 month
 <a name="s1"></a>
 ## Step 1 : Search for reliable meteorological websites
 
-Since the project was largely exploratory by the client, a first step was to gather and classify the different weather websites. The objective was to provide the extraction team with the sites to be extracted. This classification was done according to different criteria, mainly the number of stations, the type of data and the historical depth. This part is essential in all projects where data is entered. Indeed, the quality of the data is an indispensable component. I learned a lot during this period, which lasted a few months, and understood the importance of good data research. 
+Since the project was largely exploratory by the client, a first step was to gather and classify the different weather websites. The objective was to provide the extraction team with the sites to be extracted. This classification was done according to different criteria, mainly the number of stations, the type of data and the historical depth. This part is essential in all data driven projects. Indeed, the quality of the data is an indispensable component. I learned a lot during this period, which lasted 4 months, and understood the importance of good data research. 
 
-Here you can see an excel extract of our results : 
+Here you can see an excel extract of our research : 
 
 (mettre photo excel)
 
@@ -25,7 +25,7 @@ Once the data had been extracted, the idea was to carry out graphic displays and
 
 In the midst of all this collected data, we have stations that transmit highly reliable data and serve as a benchmark. These are data from 279 stations called "synop" and they are distributed homogeneously over all French territories.
 
-Thus, each extracted meteorological station was associated with the closest reference synop station. We used 4 statistical indicators to judge the similarity or difference between a station and its reference (= its synop). The criteria were: bias, standard deviation, MAE and MAPE. 
+Thus, each extracted meteorological station was associated with the closest reference synop station. We used 4 statistical indicators to judge the similarity or difference between a station and its reference (= its synop). The criteria were: bias, standard deviation, MAE and MAPE. On the right, the red dots are the weather stations to which we must know their reliability. In blue, these are the reference stations, or also called "synop". 
 
 One problem encountered during this step is the length of time it takes to complete a form. Indeed, all the graphs returned by the python code had to be copied and pasted on a word document. However, the execution time of the code was long and more than 15 graphics were present. So, I decided to automate the process by creating a local folder with all the pre-filled images and texts. 
 
