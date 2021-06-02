@@ -29,7 +29,7 @@ In the midst of all this collected data, we have stations that transmit highly r
 
 Thus, each extracted meteorological station was associated with the closest reference synop station. We used 4 statistical indicators to judge the similarity or difference between a station and its reference (= its synop). The criteria were: bias, standard deviation, MAE and MAPE. On the right, the red dots are the weather stations to which we must know their reliability. In blue, these are the reference stations, or also called "synop". 
 
-One problem encountered during this step is the length of time it takes to complete a form. Indeed, all the graphs returned by the python code had to be copied and pasted on a word document. Furthermore, the execution time of the code was long and more than 15 graphics were present. So, I decided to automate the process by creating directly a local folder with all the pre-filled images and texts for each station. 
+One problem encountered during this step is the length of time it takes to complete a sheet. Indeed, all the graphs returned by the python code had to be copied and pasted on a word document. Furthermore, the execution time of the code was long and more than 15 graphics were present. So, I decided to automate the process by creating directly a local folder with all the pre-filled images and texts for each station. 
 
 <a name="s3"></a>
 ## Step 3 : Conclusion on criteria
