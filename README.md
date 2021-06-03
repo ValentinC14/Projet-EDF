@@ -211,14 +211,18 @@ models, predictions = reg.fit(X_train, X_test, y_train, y_test)
 
 The results show a better efficiency of the regularised linear regression models (ElasticNet, Lasso). 
 
-(tableau résultat)
+<p align="center">
+  <img width="300" height="400" src="https://github.com/valentincthrn/projet-edf/blob/main/images/lazy_result.png">
+</p>
 
 Then, with GridSearchCV, I found the optimal hyperparameter of ElasticNet: the l1_ratio equal to 0.1. 
 
 
-Then the results of the model `ElasticNet(l1_ratio = 0.1)`on the test data are the following: (RESULT TEST)
+Then the results of the model `ElasticNet(l1_ratio = 0.1)`on the test data are the following: 
 
-
+<p align="center">
+  <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/result_test_elastic.png">
+</p>
 
 On average, our model predicts a -1.3% difference in load factor. Our client was satisfied with the result. 
 
@@ -250,6 +254,10 @@ def create_model_simple_avec_dropout(dropout_rate = 0.2):
 
 I obtained less satisfactory results with an average bias of -3.31% on the test data. 
 
+
+<p align="center">
+  <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/result_test_NN.png">
+</p>
 
 ## Conclusion
 
