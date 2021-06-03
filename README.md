@@ -11,9 +11,8 @@ This project is part of the Centrale educational curriculum. It lasts 18 months 
 - [step 3 : conclusion on the data selection criteria](#s3)
 - [step 4 : development of an AI algorithm to predict the load factor of French wind farms](#s4)
 
-<img align="left" width="50" height="50" src="https://github.com/valentincthrn/projet-edf/blob/main/images/attention_logo.png">
 
- I will only provide the Python codes for the last step (Machine Learning). Indeed, the preceding codes were carried out in the group and can be confidential for our customer. Furthermore, The notebook available in this Github is an old version for confidentiality reasons.
+#### IMPORTANT : I will only provide the Python codes for the last step (Machine Learning). Indeed, the preceding codes were carried out in the group and can be confidential for our customer. Furthermore, the notebook available in this Github is an old version for confidentiality reasons.
 
 <a name="s1"></a>
 ## Step 1 : Search for reliable meteorological websites
