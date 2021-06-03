@@ -131,7 +131,29 @@ def concatenation_dfcomp(liste_url):
 
 Then a pivot is applied to index each time step and the columns correspond to the data of each station. 
 
-(put code)
+```python
+def ajout_colonne_nom(df, liste_id):
+    ### date unique est une variable qui sauvegarde toutes les dates différentes du df
+    date_unique = df_tot['index'].unique()
+    
+    liste_nom_colonne_temp = []
+    liste_nom_colonne_vent = []
+    
+    for ident in liste_id:
+        N = len(df[df['id']== int(ident)])
+        
+        for index in range(N):
+            liste_nom_colonne_temp.append('temp_{}'.format(ident))
+            liste_nom_colonne_vent.append('vent_{}'.format(ident))
+    
+    df['nom_temp'] = liste_nom_colonne_temp
+    df['nom_vent'] = liste_nom_colonne_vent
+    
+    return df
+
+df = ajout_colonne_nom(df_tot, liste_id_sans_na)
+df_vent = df.pivot(index = 'index', columns = 'nom_vent', values = 'vent_meteociel')
+```
 
 However, during the concatenation, missing values appeared because of the join on all the existing time steps. After analysis, I first deleted all stations with more than 6% missing values. For the other stations, I applied an experimental class from Scikit-learn called "Iterative Imputer" which replaced the missing values very well. 
 
