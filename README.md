@@ -11,7 +11,9 @@ This project is part of the Centrale educational curriculum. It lasts 18 months 
 - [step 3 : conclusion on the data selection criteria](#s3)
 - [step 4 : development of an AI algorithm to predict the load factor of French wind farms](#s4)
 
-/!\ I will only provide the Python codes for the last step (Machine Learning). Indeed, the preceding codes were carried out in the group and can be confidential for our customer. Furthermore, The notebook available in this Github is an old version for confidentiality reasons.
+<img align="left" width="50" height="50" src="https://github.com/valentincthrn/projet-edf/blob/main/images/attention_logo.png">
+
+ I will only provide the Python codes for the last step (Machine Learning). Indeed, the preceding codes were carried out in the group and can be confidential for our customer. Furthermore, The notebook available in this Github is an old version for confidentiality reasons.
 
 <a name="s1"></a>
 ## Step 1 : Search for reliable meteorological websites
@@ -67,6 +69,8 @@ Finally, after some reflexions and analysis,results on criteria are summarized i
 
 
 Thus, a station is considered reliable if it is located less than 70km from its reference station (its synop) and at an altitude difference of less than 400m.
+
+I also made some graphical displays on Streamlit where an extract of the code is available [here]("https://github.com/valentincthrn/projet-edf/blob/main/Viz-EDF.py").
 
 <a name="s4"></a>
 ## Step 4 : Machine Learning
