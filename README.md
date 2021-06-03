@@ -78,7 +78,10 @@ The load factor is defined as the ratio between the output of the wind turbines 
 
 In contrast to the method used by EDF, and due to the limited resources I have, I have adopted an end-to-end approach as illustrated below. 
 
-(put method)
+<p align="center">
+  <img width="800" height="500" src="https://github.com/valentincthrn/projet-edf/blob/main/images/method.png">
+</p>
+
 
 The data from the Extraction division are several Excels. Each excel corresponds to ONLY one weather station. Within these excels, the indexes are the time step (here hourly step) and the columns are our features (date, meteociel temperature, synop temperature, meteociel wind, synop wind). So, the first step is to concatenate all the excels together in a dataframe. 
 
