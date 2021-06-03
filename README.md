@@ -159,10 +159,22 @@ The purpose of the two previous codes can be summarised in the following illustr
 
 
 <p align="center">
-  <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/resumepreprocess.png">
+  <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/heatmap.png">
 </p>
 
-However, during the concatenation, missing values appeared because of the join on all the existing time steps. After analysis, I first deleted all stations with more than 6% missing values. For the other stations, I applied an experimental class from Scikit-learn called "Iterative Imputer" which replaced the missing values very well. 
+However, during the concatenation, missing values appeared because of the join on all the existing time steps. The following code allows you to make this very useful representation. Here, each white "dot" represents a missing value. 
+
+<img align="right" width="300" height="300" src="https://github.com/valentincthrn/projet-edf/blob/main/images/map-station.png">
+
+```python 
+
+plt.figure(figsize=(20,10))
+sns.heatmap(df_final_ml.isna(), cbar=False)
+
+```
+
+
+After analysis, I first deleted all stations with more than 6% missing values. For the other stations, I applied an experimental class from Scikit-learn called "Iterative Imputer" which replaced the missing values very well. 
 
 (put missing values code)
 
