@@ -155,6 +155,13 @@ df = ajout_colonne_nom(df_tot, liste_id_sans_na)
 df_vent = df.pivot(index = 'index', columns = 'nom_vent', values = 'vent_meteociel')
 ```
 
+The purpose of the two previous codes can be summarised in the following illustration.
+
+
+<p align="center">
+  <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/resumepreprocess.png">
+</p>
+
 However, during the concatenation, missing values appeared because of the join on all the existing time steps. After analysis, I first deleted all stations with more than 6% missing values. For the other stations, I applied an experimental class from Scikit-learn called "Iterative Imputer" which replaced the missing values very well. 
 
 (put missing values code)
