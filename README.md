@@ -89,7 +89,45 @@ As I do not have the computing power, I was forced to remove this block from the
 
 The data from the Extraction division are several Excels. Each excel corresponds to ONLY one weather station. Within these excels, the indexes are the time step (here hourly step) and the columns are our features (date, meteociel temperature, synop temperature, meteociel wind, synop wind). So, the first step is to concatenate all the excels together in a dataframe. 
 
-(put code)
+- `liste_url` is a list of all the paths to our different excels. 
+
+```python 
+def concatenation_dfcomp(liste_url):
+    liste_df = [] ### Initialisation de la liste qui permettra de réaliser la concatenation à la fin
+    
+    columns_to_drop = ['date','temperature_synop','ind','annee','mois','jour','heure','difference_temperature','difference_vent'] ### les colonnes à enlever
+    compt_na = 0 ### Un compteur qui va comptabiliser les stations qui ne seront pas concaténer car présentant des valeurs manquantes
+    liste_sans_na_id = [] ### Liste qui retriendra tout les identifiants des df qui seront concaténés
+    
+    for index, url in enumerate(liste_url):
+        
+        ### Mise en forme du df en accord avec les points précédents
+        df = pd.read_csv(url, sep=';', index_col = 'Unnamed: 0')
+        id = int(liste_id[index])
+        df = df.rename(columns = {'Unnamed: 0':'Datetime'}).drop(columns_to_drop, axis=1)
+        df.index = pd.to_datetime(df.index)
+        df['vent_meteociel'] = df['vent_meteociel'].apply(lambda x : round(x,2))
+        
+        ### Variable contenant le nombre de valeurs manquantes sur la colonne température météociel et température vent
+        isna = df.isna().sum().tolist()
+        
+        ### On ajoute pour chaque dataframe une colonne de son identifiant, ce qui permettra de le repérer par la suite
+        id_serie = [id] * len(df)
+        df['id'] = id_serie
+
+        ### On regarde si isna == [0, 0] en d'autres termes, si le df présente aucune valeurs manquantes sur les données météociel
+        if isna != [0, 0]:
+            compt_na = compt_na + 1
+        
+        else:
+            liste_sans_na_id.append(id)
+            liste_df.append(df)
+    
+    ### Concaténation des df
+    df_tot = pd.concat([df for df in liste_df]).reset_index() ### On reset_index car l'index est notre pas de temps et par la suite, c'est mieux d'éviter d'avoir notre pas de temps en index
+    
+    return [df_tot, compt_na, liste_sans_na_id]
+```
 
 Then a pivot is applied to index each time step and the columns correspond to the data of each station. 
 
