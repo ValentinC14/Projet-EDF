@@ -79,7 +79,7 @@ The load factor is defined as the ratio between the output of the wind turbines 
 In contrast to the method used by EDF, and due to the limited resources I have, I have adopted an end-to-end approach as illustrated below. 
 
 <p align="center">
-  <img width="800" height="550" src="https://github.com/valentincthrn/projet-edf/blob/main/images/method.png">
+  <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/method.jpg">
 </p>
 
 
