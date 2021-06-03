@@ -200,28 +200,60 @@ X = impute_na(df)
 ```
 A heatmap like the one above would show that no missing values remain. (no white spots)
 
+After some pre-processing of the labels, it is time to tackle the implementation of a Machine Learning model. As a reminder, the input data contains 24 points (wind data over the last 24 hours) and the data to be predicted are the 4 instants after t.
+The first step which I think is essential is to start simple via linear regression. More generally, I used a class called "LazyPredict" which allows making predictions with all models compatible with our data types. 
 
-The data is now ready and now it is time to implement AI algorithms. The first step which I think is essential is to start simple via linear regression. More generally, I used a class called "LazyPredict" which allows making predictions with all models compatible with our data types. 
-
-(put Lazy Predict code)
+```python
+from lazypredict.Supervised import LazyRegressor
+reg = LazyRegressor(verbose = 2, ignore_warnings = False, custom_metric =None)
+models, predictions = reg.fit(X_train, X_test, y_train, y_test)
+```
 
 The results show a better efficiency of the regularised linear regression models (ElasticNet, Lasso). 
 
+(tableau résultat)
+
 Then, with GridSearchCV, I found the optimal hyperparameter of ElasticNet: the l1_ratio equal to 0.1. 
 
-(gridsearch code)
 
-Then the results of the model on the test data are the following: 
+Then the results of the model `ElasticNet(l1_ratio = 0.1)`on the test data are the following: (RESULT TEST)
 
-(put picture)
+
 
 On average, our model predicts a -1.3% difference in load factor. Our client was satisfied with the result. 
 
 Then, out of curiosity, I developed a simple neural network structured in a relatively simple way. 
 
-(code NN)
+```python
+def create_model_simple_avec_dropout(dropout_rate = 0.2):
+
+    inputs = keras.Input(shape=(8208,))
+
+
+    x = layers.Dense(1024, activation='relu',kernel_initializer="he_normal")(inputs)
+    x = layers.Dropout(dropout_rate)(x)
+
+    x = layers.Dense(256, activation='relu',kernel_initializer="he_normal")(x)
+    x = layers.Dropout(dropout_rate)(x)
+       
+    x = layers.Dense(64, activation='relu',kernel_initializer="he_normal")(x)
+    x = layers.Dropout(dropout_rate)(x)
+    
+    x = layers.Dense(8, activation='relu',kernel_initializer="he_normal")(x)
+
+    outputs = layers.Dense(2)(x)
+    
+    model = keras.Model(inputs = inputs, outputs = outputs, name='model_simple_avec_dropout')
+    
+    return model
+```
 
 I obtained less satisfactory results with an average bias of -3.31% on the test data. 
+
+
+## Conclusion
+
+
 
 
 
