@@ -1,5 +1,7 @@
 # Projet-EDF
 
+- - - -
+
 <img align="right" width="400" height="150" src="https://github.com/valentincthrn/projet-edf/blob/main/images/logo_edf.png">
 
 This project is part of the Centrale educational curriculum. It lasts 18 months and is carried out in a team of 12 people in collaboration with EDF. Here, I will detail the technical aspect undertaken by the team and myself. This project is part of the Centrale educational curriculum. It lasts 18 months and is carried out in a team of 12 people in collaboration with EDF. Here, I will detail the technical aspect undertaken by the team and myself. Chronologically, the work was divided as follows: 
@@ -259,7 +261,11 @@ I obtained less satisfactory results with an average bias of -3.31% on the test 
   <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/result_test_NN.png">
 </p>
 
+- - - -
+
 ## Conclusion
+
+The results are satisfactory. Indeed, the limited historical depth of our data (6 months) plays on the performance of our results, especially for the neural network. The ElasticNet regression model seems to be much better than this simple neural network. However, due to lack of time, several extensions that I would have liked to work on were not addressed (setting up an RNN, optimizing the hyperparameters of the neural network, refining the quality of the data...)
 
 
 
