@@ -177,8 +177,29 @@ sns.heatmap(df.isna(), cbar=False)
 
 
 After analysis, I first deleted all stations with more than 6% missing values. For the other stations, I applied an experimental class from Scikit-learn called "Iterative Imputer" which replaced the missing values very well. 
+```python 
+from sklearn.impute import IterativeImputer
 
-(put missing values code)
+def impute_na(df):
+    ### Création du nouveau dataframe avec les valeurs qui ont été remplacées
+    imputer = IterativeImputer(random_state = 42)
+    array_df = df.values ### Converti le dataframe en tableau 
+    new_array = imputer.fit_transform(array_df)
+    df_sans_na = pd.DataFrame(new_array) 
+    
+    ### Mettre les dates et nom de colonnes de l'ancien sur le nouveau
+    liste_col = list(df.columns)
+    liste_date = list(df.index)
+    df_sans_na.columns = liste_col
+    df_sans_na['date'] = liste_date
+    df_final = df_sans_na.set_index('date')
+    
+    return df_final
+
+X = impute_na(df)
+```
+A heatmap like the one above would show that no missing values remain. (no white spots)
+
 
 The data is now ready and now it is time to implement AI algorithms. The first step which I think is essential is to start simple via linear regression. More generally, I used a class called "LazyPredict" which allows making predictions with all models compatible with our data types. 
 
