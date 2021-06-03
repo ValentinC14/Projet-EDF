@@ -26,6 +26,8 @@ Here you can see an excel extract of our research :
   <img width="800" height="300" src="https://github.com/valentincthrn/projet-edf/blob/main/images/excel_recherche.png">
 </p>
 
+L'équipe d'Extraction nous a donc fourni un dossier possèdent une multitude d'Excel. Chaque excel correspond aux données en température d'une seule station météorologique. Ce dossier (seulement pour les températures) est disponible [ici]("https://github.com/valentincthrn/projet-edf/blob/main/list_temps_synop_mc"). 
+
 <a name="s2"></a>
 ## Step 2 : Analysis sheets
 
