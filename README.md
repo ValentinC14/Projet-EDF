@@ -82,6 +82,10 @@ In contrast to the method used by EDF, and due to the limited resources I have, 
   <img width="800" height="350" src="https://github.com/valentincthrn/projet-edf/blob/main/images/method.jpg">
 </p>
 
+To predict the load factors, EDF's method is to use their supercomputer to get an estimate of the wind in the next 24 hours. These supercomputers are based on extremely complex weather models. Then, for each time step (in this case hourly), a model is used to predict the load factor at that same time step. (LF stands for "Load Factor").
+As I do not have the computing power, I was forced to remove this block from the pipeline. So I created a model that takes ALL the wind data of the previous 24 hours and predicts the load factor of the next 4 hours. This is an approach called "end to end". 
+
+**Now it's time for some code !**
 
 The data from the Extraction division are several Excels. Each excel corresponds to ONLY one weather station. Within these excels, the indexes are the time step (here hourly step) and the columns are our features (date, meteociel temperature, synop temperature, meteociel wind, synop wind). So, the first step is to concatenate all the excels together in a dataframe. 
 
